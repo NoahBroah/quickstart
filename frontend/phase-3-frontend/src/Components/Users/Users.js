@@ -1,24 +1,28 @@
-import React, {useEffect, useState} from 'react'
-import UserCard from './UserCard'
+import React, { useEffect, useState } from "react";
+import UserCard from "./UserCard";
 
 function Users({userId}) {
-const [userData, setUserData] = useState(null)
+  const [userData, setUserData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4001/users/${userId}/transactions`)
-    .then(resp => resp.json())
-    .then(user => setUserData(user))
-},[])
-    
-    const userCards = userData.map((user) => {
-        return <UserCard key={user.id} user={user} />
-    })
+    fetch(`http://localhost:4001/users`)
+      .then((resp) => resp.json())
+      .then((user) => setUserData(user));
+  }, []);
+
+  // const userCards = userData.map((user) => {
+  //     return <UserCard key={user.id} user={user} />
+  // })
 
   return (
-    <div>
-        {userCards}
-    </div>
-  )
+    <section>
+      {userData.map((user) => (
+        <UserCard key={user.id} userId={userId} user={user} />
+      ))}
+    </section>
+  );
 }
 
-export default Users
+export default Users;
+
+
