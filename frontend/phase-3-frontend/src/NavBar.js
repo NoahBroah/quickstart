@@ -1,17 +1,29 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { Navbar, NavItem } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div>
+    <Navbar>
+      <NavItem>
         <NavLink to="/" exact>
-            Home
+          Home
         </NavLink>
-        <NavLink to="/login" exact>
-            Login
-        </NavLink>
-    </div>
-  )
+      </NavItem>
+      <NavLink to="/register" exact>
+        Register
+      </NavLink>
+      <NavLink to="/login" exact>
+        Login
+      </NavLink>
+      <NavLink to="/users" exact>
+        Users
+      </NavLink>
+      <NavLink to="/transactions" exact>
+        Transactions
+      </NavLink>
+    </Navbar>
+  );
 }
 
-export default NavBar
+export default NavBar;
