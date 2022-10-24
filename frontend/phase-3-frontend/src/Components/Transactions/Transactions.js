@@ -9,7 +9,7 @@ function Transactions() {
     useEffect(() => {
         fetch('http://localhost:4001/transactions')
         .then(resp => resp.json())
-        .then(users => setTransactions(users))
+        .then(data => setTransactions(data))
     },[])
 
     const transactionCards= transactions.map((trans) => {

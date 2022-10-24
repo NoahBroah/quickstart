@@ -1,28 +1,24 @@
-import React, { useEffect, useState } from "react";
-import UserCard from "./UserCard";
+import React, { useEffect, useState } from 'react'
+import UserLists from "./UserLists"
 
-function Users({userId}) {
-  const [userData, setUserData] = useState([]);
+function Users() {
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:4001/users`)
-      .then((resp) => resp.json())
-      .then((user) => setUserData(user));
-  }, []);
-
-  // const userCards = userData.map((user) => {
-  //     return <UserCard key={user.id} user={user} />
-  // })
+    fetch('http://localhost:4001/users')
+        .then(resp => resp.json())
+        .then(users => setUsers(users))
+    },[])
 
   return (
-    <section>
-      {userData.map((user) => (
-        <UserCard key={user.id} userId={userId} user={user} />
+    <div>
+      {users.map((user) => (
+        <UserLists key={user.id} user={user} setUsers={setUsers} users={users} />
       ))}
-    </section>
-  );
+    </div>
+  )
 }
 
-export default Users;
+export default Users
 
 

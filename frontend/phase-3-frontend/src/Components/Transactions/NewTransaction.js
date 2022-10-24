@@ -4,13 +4,13 @@ import Form from "react-bootstrap/Form";
 import { Container, Row } from "react-bootstrap";
 
 const initialForm = {
-  username: "",
-  email: "",
-  password: "",
-  hourly_rate: "",
+  name: "",
+  amount: "",
+  category: "",
+  user_id: "",
 };
 
-function Register() {
+function NewTransaction() {
   const [formData, setFormData] = useState(initialForm);
 
   function handleChange(e) {
@@ -22,12 +22,12 @@ function Register() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newUser = { ...formData };
+    const newTransaction = { ...formData };
 
-    fetch("http://localhost:4001/users", {
+    fetch(`http://localhost:4001/transactions`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(newTransaction),
     }).then(setFormData(initialForm));
   }
 
@@ -42,46 +42,43 @@ function Register() {
           <Form.Label>Please fill out the information below to create an account</Form.Label>
 
           <Form.Group className="mb-3">
-            <Form.Label>Username</Form.Label>
+            <Form.Label>Merchant Name</Form.Label>
             <Form.Control
-              name="username"
-              type="username"
-              placeholder="Username"
-              value={formData.username}
+              name="name"
+              type="name"
+              placeholder="Merchant Name"
+              value={formData.name}
               onChange={handleChange}
             />
             </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Amount</Form.Label>
             <Form.Control
-              name="email"
-              type="email"
-              placeholder="Enter email"
-              value={formData.email}
+              name="amount"
+              type="amount"
+              placeholder="Enter Amount"
+              value={formData.amount}
               onChange={handleChange}
             />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Category</Form.Label>
             <Form.Control
-              name="password"
-              type="password"
-              placeholder="Password"
-              value={formData.password}
+              name="category"
+              type="category"
+              placeholder="Category"
+              value={formData.category}
               onChange={handleChange}
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Hourly Rate</Form.Label>
+            <Form.Label>User Id</Form.Label>
             <Form.Control
-              name="hourly_rate"
-              type="hourly_rate"
-              placeholder="Hourly Rate"
-              value={formData.hourly_rate}
+              name="user_id"
+              type="user_id"
+              placeholder="ID of associated user"
+              value={formData.user_id}
               onChange={handleChange}
             />
             </Form.Group>
@@ -94,4 +91,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default NewTransaction;
