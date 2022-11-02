@@ -7,8 +7,7 @@ function NavBar() {
   return (
     <>
       <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand>Navbar</Navbar.Brand>
+        <div>
           <Nav className="me-auto">
             <Nav.Link href="/">
               Home
@@ -17,7 +16,7 @@ function NavBar() {
             <Nav.Link href="/users">Users</Nav.Link>
             <Nav.Link href="/transactions">New Transaction</Nav.Link>
           </Nav>
-        </Container>
+        </div>
       </Navbar>
       <br />
     </>

@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import UserLists from "./UserLists"
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row, Stack } from "react-bootstrap";
+import UserLists from "./UserLists";
 
 function Users() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4001/users')
-        .then(resp => resp.json())
-        .then(users => setUsers(users))
-    },[])
+    fetch("http://localhost:4001/users")
+      .then((resp) => resp.json())
+      .then((users) => setUsers(users));
+  }, []);
 
-    function deleteOnClick(id) {
-      fetch(`http://localhost:4001/users/${id}`, {
-        method: "DELETE"
-      })
-      .then(resp => resp.json())
-      .then(setUsers(users.filter((user) => user.id !==id )))
-    }
+  function deleteOnClick(id) {
+    fetch(`http://localhost:4001/users/${id}`, {
+      method: "DELETE",
+    })
+      .then((resp) => resp.json())
+      .then(setUsers(users.filter((user) => user.id !== id)));
+  }
 
-// PATCH REQUEST
+  // PATCH REQUEST
 
-    function handleUpdatedRate(updatedRate, id) {
-      fetch(`http://localhost:4001/users/${id}`, {
+  function handleUpdatedRate(updatedRate, id) {
+    fetch(`http://localhost:4001/users/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -29,24 +30,30 @@ function Users() {
       body: JSON.stringify(updatedRate),
     })
       .then((resp) => resp.json())
-      .then(updatedRate => {
+      .then((updatedRate) => {
         setUsers(
-          users.map(user => {
-            return user.id === updatedRate.id ? updatedRate : user
+          users.map((user) => {
+            return user.id === updatedRate.id ? updatedRate : user;
           })
-        )
-    })
-    }
+        );
+      });
+  }
 
   return (
-    <div>
-      {users.map((user) => (
-        <UserLists key={user.id} user={user} deleteBtn={deleteOnClick} handleUpdatedRate={handleUpdatedRate} />
-      ))}
-    </div>
-  )
+    <Container>
+      <Stack direction="horizontal" gap={3}>
+          {users.map((user) => (
+            <UserLists
+              key={user.id}
+              user={user}
+              deleteBtn={deleteOnClick}
+              handleUpdatedRate={handleUpdatedRate}
+            />
+          ))}
+          </Stack>
+    </Container>
+          
+  );
 }
 
-export default Users
-
-
+export default Users;
