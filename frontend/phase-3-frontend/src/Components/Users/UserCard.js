@@ -22,15 +22,3 @@ function UserCard({ userId, rate }) {
 
 export default UserCard;
 
-{
-  /* <div>
-<h1>{singleUser.username}</h1>
-<h3>{singleUser.transactions.map((transaction) => (
-    <div>
-        <h5>Username: {transaction.name}</h5>
-        <h5>Amount: ${transaction.amount}.00</h5>
-        <h5>Category: {transaction.category}</h5>
-    </div>
-))}</h3>
-</div> */
-}
