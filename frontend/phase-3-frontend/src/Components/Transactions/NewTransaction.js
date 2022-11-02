@@ -7,7 +7,7 @@ const initialForm = {
   name: "",
   amount: "",
   category: "",
-  user_id: "",
+  username: "",
 };
 
 function NewTransaction() {
@@ -75,10 +75,10 @@ function NewTransaction() {
           <Form.Group className="mb-3">
             <Form.Label>User Id</Form.Label>
             <Form.Control
-              name="user_id"
-              type="user_id"
-              placeholder="ID of associated user"
-              value={formData.user_id}
+              name="username"
+              type="username"
+              placeholder="username of associated user"
+              value={formData.username}
               onChange={handleChange}
             />
             </Form.Group>

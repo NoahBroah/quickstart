@@ -78,9 +78,13 @@ function UserLists({ user, deleteBtn, handleUpdatedRate }) {
           </Card.Body>
         </Card>
       ) : (
-        <UserCard userId={id} />
+        <>
+          <UserCard userId={id} rate={hourly_rate} />
+          <Button variant="primary" onClick={handleClick}>
+            Hide Users Transactions
+          </Button>
+        </>
       )}
-      
     </div>
   );
 }

@@ -1,13 +1,15 @@
 import React from 'react'
 
-function TransactionCard({ transactions }) {
-    const {name, amount, date, category, user_id} = transactions
+function TransactionCard({ transactions, rate }) {
+    const { name, amount, category } = transactions
   return (
     <div>
-        <h1>{name}</h1>
-        <h2>${amount}.00</h2>
-        <h3>{date}</h3>
-        <h4>{category}</h4>
+        <div>
+          <h5>Name: {name}</h5>
+          <p>Amount in Hours: {(amount / rate).toFixed(2)} Hours</p>
+          <p>Amount: ${amount}.00</p>
+          <p>Category: {category}</p>
+          </div>
     </div>
   )
 }
