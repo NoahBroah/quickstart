@@ -9,9 +9,6 @@ function NavBar() {
       <Navbar bg="dark" variant="dark">
         <div>
           <Nav className="me-auto">
-            <Nav.Link href="/">
-              Home
-            </Nav.Link>
               <Nav.Link href="/register">Register</Nav.Link>
             <Nav.Link href="/users">Users</Nav.Link>
             <Nav.Link href="/transactions">New Transaction</Nav.Link>

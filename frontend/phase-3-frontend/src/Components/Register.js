@@ -22,6 +22,7 @@ function Register() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    alert('A new user has been created!')
     const newUser = { ...formData };
 
     fetch("http://localhost:4001/users", {
@@ -34,12 +35,11 @@ function Register() {
   return (
     <Container>
       <h2>
-        Fill out the information below to associate transactions with your
-        account
+        Register an Account
       </h2>
       <Row>
         <Form onSubmit={handleSubmit}>
-          <Form.Label>Please fill out the information below to create an account</Form.Label>
+          <Form.Label>Please fill out the information below to create a new account</Form.Label>
 
           <Form.Group className="mb-3">
             <Form.Label>Username</Form.Label>

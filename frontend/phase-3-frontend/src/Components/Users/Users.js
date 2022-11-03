@@ -41,6 +41,7 @@ function Users() {
 
   return (
     <Container>
+      <h1>It's <em>Time</em> to look at money differently</h1>
       <Stack direction="horizontal" gap={3}>
           {users.map((user) => (
             <UserLists

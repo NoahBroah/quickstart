@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import { Col, Container, Row } from "react-bootstrap";
 import UserCard from "./UserCard";
-// import UpdateUser from "./UpdateUser";
 
 function UserLists({ user, deleteBtn, handleUpdatedRate }) {
   const { username, hourly_rate, email, id } = user;

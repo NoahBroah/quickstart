@@ -39,7 +39,6 @@ function NewTransaction() {
       </h2>
       <Row>
         <Form onSubmit={handleSubmit}>
-          <Form.Label>Please fill out the information below to create an account</Form.Label>
 
           <Form.Group className="mb-3">
             <Form.Label>Merchant Name</Form.Label>
