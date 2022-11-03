@@ -73,7 +73,7 @@ function NewTransaction() {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>User Id</Form.Label>
+            <Form.Label>Username</Form.Label>
             <Form.Control
               name="username"
               type="username"
