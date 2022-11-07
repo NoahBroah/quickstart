@@ -26,6 +26,11 @@ Before you continue, ensure you have met the following requirements:
 
 ## Getting Started
 
+### `npm install`
+
+Runs the correct npm files needed for your frontend project to run correctly.
+If you choose to install other npm files into your frontend be sure to run this after those specific files have been installed.
+
 ### `npm start`
 
 Runs the app in the development mode.\
