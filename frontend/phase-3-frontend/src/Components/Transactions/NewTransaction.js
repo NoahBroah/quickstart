@@ -39,7 +39,6 @@ function NewTransaction() {
       </h2>
       <Row>
         <Form onSubmit={handleSubmit}>
-
           <Form.Group className="mb-3">
             <Form.Label>Merchant Name</Form.Label>
             <Form.Control
@@ -49,7 +48,7 @@ function NewTransaction() {
               value={formData.name}
               onChange={handleChange}
             />
-            </Form.Group>
+          </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Amount</Form.Label>
             <Form.Control
@@ -80,7 +79,7 @@ function NewTransaction() {
               value={formData.username}
               onChange={handleChange}
             />
-            </Form.Group>
+          </Form.Group>
           <Button variant="primary" type="submit">
             Submit
           </Button>

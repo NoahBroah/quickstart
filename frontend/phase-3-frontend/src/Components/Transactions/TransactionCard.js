@@ -1,7 +1,7 @@
 import React from 'react'
 
-function TransactionCard({ transactions, rate }) {
-    const { name, amount, category } = transactions
+function TransactionCard({ trans, rate }) {
+    const { name, amount, category } = trans
   return (
     <div>
         <div>
