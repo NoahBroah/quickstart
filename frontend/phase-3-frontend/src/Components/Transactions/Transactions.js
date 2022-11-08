@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TransactionCard from "./TransactionCard";
 
-function Transactions({rate, userId, singleUser}) {
+function Transactions({rate, singleUser}) {
 
  
 

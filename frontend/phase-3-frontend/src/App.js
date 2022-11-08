@@ -30,7 +30,7 @@ function App() {
           <Users />
         </Route>
         <Route path="/transactions">
-          <NewTransaction />
+          <NewTransaction setTransactions={setTransactions}/>
         </Route>
       </Switch>
     </div>

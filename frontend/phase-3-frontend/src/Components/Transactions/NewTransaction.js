@@ -10,7 +10,7 @@ const initialForm = {
   username: "",
 };
 
-function NewTransaction() {
+function NewTransaction({setTransactions}) {
   const [formData, setFormData] = useState(initialForm);
 
   function handleChange(e) {
@@ -28,7 +28,8 @@ function NewTransaction() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTransaction),
-    }).then(setFormData(initialForm));
+    }).then(setTransactions(newTransaction))
+    .then(setFormData(initialForm));
   }
 
   return (
