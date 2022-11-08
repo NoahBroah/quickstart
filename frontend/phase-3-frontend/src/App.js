@@ -31,7 +31,7 @@ function App() {
           <Users />
         </Route>
         <Route path="/newtransactions">
-          <NewTransaction setTransactions={setTransactions}/>
+          <NewTransaction setTransactions={setTransactions} transactions={transactions}/>
         </Route>
         <Route path="/transactions">
           <Transaction transactions={transactions}/>

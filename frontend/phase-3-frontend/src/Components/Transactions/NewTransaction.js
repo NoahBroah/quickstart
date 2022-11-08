@@ -10,7 +10,7 @@ const initialForm = {
   username: "",
 };
 
-function NewTransaction({setTransactions}) {
+function NewTransaction({setTransactions, transactions}) {
   const [formData, setFormData] = useState(initialForm);
 
   function handleChange(e) {
@@ -28,7 +28,7 @@ function NewTransaction({setTransactions}) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTransaction),
-    }).then(setTransactions(newTransaction))
+    }).then(setTransactions(...transactions, newTransaction))
     .then(error => error.status === 500 ? alert('No user found') :null )
     .then(setFormData(initialForm));
   }
