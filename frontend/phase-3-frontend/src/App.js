@@ -5,6 +5,7 @@ import Users from "./Components/Users/Users";
 import Register from "./Components/Register";
 import NewTransaction from "./Components/Transactions/NewTransaction";
 import { useEffect, useState } from "react";
+import Transaction from "./Transaction";
 
 
 
@@ -29,8 +30,11 @@ function App() {
         <Route exact path="/users">
           <Users />
         </Route>
-        <Route path="/transactions">
+        <Route path="/newtransactions">
           <NewTransaction setTransactions={setTransactions}/>
+        </Route>
+        <Route path="/transactions">
+          <Transaction transactions={transactions}/>
         </Route>
       </Switch>
     </div>

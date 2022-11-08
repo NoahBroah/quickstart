@@ -29,6 +29,7 @@ function NewTransaction({setTransactions}) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTransaction),
     }).then(setTransactions(newTransaction))
+    .then(error => error.status === 500 ? alert('No user found') :null )
     .then(setFormData(initialForm));
   }
 

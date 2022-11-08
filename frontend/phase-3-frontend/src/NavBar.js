@@ -11,7 +11,8 @@ function NavBar() {
           <Nav className="me-auto">
               <Nav.Link href="/register">Register</Nav.Link>
             <Nav.Link href="/users">Users</Nav.Link>
-            <Nav.Link href="/transactions">New Transaction</Nav.Link>
+            <Nav.Link href="/newtransactions">New Transaction</Nav.Link>
+            <Nav.Link href="/transactions">Transactions</Nav.Link>
           </Nav>
         </div>
       </Navbar>

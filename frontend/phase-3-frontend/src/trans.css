@@ -1,0 +1,13 @@
+.trans-cards{
+    border-style: solid;
+    border-radius: 6px;
+    margin-top: 15px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.title {
+    font-weight: bolder;
+}
